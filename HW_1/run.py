@@ -1,5 +1,5 @@
 from wsgiref.simple_server import make_server
-from simba_framework.main import Framework
+from framework.main import Framework
 from urls import routes, fronts
 
 
