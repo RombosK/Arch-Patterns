@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block style %}
+  {% include "includes/inc_style.html" %}
+{% endblock %}
+{% block title %}
+  {% include "includes/inc_title.html" %}
+{% endblock %}
+{% block menu %}
+    <div id="menubar">
+    <ul id="menu">
+        <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+        <li><a href="/">Home</a></li>
+<!--        <li><a href="/category_list/">Category list</a></li>-->
+<!--        <li><a href="/course_list/">Course list</a></li>-->
+<!--        <li><a href="/create_category/">Create category</a></li>-->
+<!--        <li><a href="/create_course/">Create course</a></li>-->
+        <li><a href="/study_programs/">Study programs</a></li>
+        <li class="selected"><a href="/contact/">Contact Us</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block body %}
+<body>
+   <div id="site_content">
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h3>Последние новости</h3>
+        <h4>Добавлены новые курсы</h4>
+        <h5>Декабрь 27, 2022</h5>
+        <p>2022 Новые материалы. Посмотрите и дайте нам знать ваше мнение.<br /><a href="#">Подробнее</a></p>
+        <p></p>
+        <h4>Запущен интерактивный веб-сайт</h4>
+        <h5>Декабрь 27, 2022</h5>
+        <p>2022 Новые курсы. Посмотрите и дайте нам знать ваше мнение.<br /><a href="#">Подробнее</a></p>
+        <h3>Полезные ссылки</h3>
+        <ul>
+          <li><a href="https://github.com/RombosK">link 1</a></li>
+          <li><a href="#">link 2</a></li>
+          <li><a href="#">link 3</a></li>
+          <li><a href="#">link 4</a></li>
+        </ul>
+        <h3>Поиск</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <label>
+              <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            </label>
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="../templates/style/search.png" alt="Search" title="Search" />
+          </p>
+        </form>
+      </div>
+        <div id="content">
+            <!-- insert the page content here -->
+            <h1>Связаться с нами: {{contact}} </h1>
+            <p>Ниже приведен пример того, как может выглядеть контактная форма с помощью этого шаблона:</p>
+            <form action="#" method="post">
+                <div class="form_settings">
+                    <p><span>Имя</span><input class="contact" type="text" name="your_name" value=""/></p>
+                    <p><span>Email Address</span><input class="contact" type="text" name="your_email" value=""/></p>
+                    <p><span>Сообщение</span><textarea class="contact textarea" rows="8" cols="50"
+                                                       name="your_enquiry"></textarea></p>
+                    <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit"
+                                                                           name="contact_submitted" value="submit"/></p>
+                </div>
+            </form>
+            <p><br/><br/>ПРИМЕЧАНИЕ: Для этой контактной формы потребуется отправить входные данные по
+                электронной почте на адрес test@test.gb.</p>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% include "includes/inc_footer.html" %}
+{% endblock %}
+
