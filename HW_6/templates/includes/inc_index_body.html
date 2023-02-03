@@ -1,0 +1,64 @@
+<div id="site_content">
+    <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h3>Последние новости</h3>
+        <h4>Добавлены новые курсы</h4>
+        <h5>Декабрь 27, 2022</h5>
+        <p>2022 Новые материалы. Посмотрите и дайте нам знать ваше мнение.<br/><a href="#">Подробнее</a></p>
+        <p></p>
+        <h4>Запущен интерактивный веб-сайт</h4>
+        <h5>Декабрь 27, 2022</h5>
+        <p>2022 Новые курсы. Посмотрите и дайте нам знать ваше мнение.<br/><a href="#">Подробнее</a></p>
+        <h3>Полезные ссылки</h3>
+        <ul>
+            <li><a href="https://github.com/RombosK">link 1</a></li>
+            <li><a href="#">link 2</a></li>
+            <li><a href="#">link 3</a></li>
+            <li><a href="#">link 4</a></li>
+        </ul>
+        <h3>Поиск</h3>
+        <form method="post" action="#" id="search_form">
+            <p>
+                <label>
+                    <input class="search" type="text" name="search_field" value="Enter keywords....."/>
+                </label>
+                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="../style/search.png"
+                       alt="Search" title="Search"/>
+            </p>
+        </form>
+    </div>
+    <div id="content">
+        <!-- insert the page content here -->
+
+        <h1>Добро пожаловать на обучающую платформу</h1>
+        <p>Платформа проста в понимании и использовании</p>
+        <p>Курсы на любые темы <strong>online</strong> and <strong>record</strong>, доступны каждому.</p>
+        <p>Узнать больше <a href="https://www.gb.ru">here</a>.</p>
+        <p>Полная поддержка <a href="/contact/">Contact Us</a> гарантия актуальности курсов.</p>
+
+        <div>
+            <a href="/create_category/"><h2>Создать новую категорию</h2></a>
+        </div>
+        <div>
+            <h1>Список существующих категорий:</h1>
+            {% for item in objects_list %}
+            <ul>
+                <li>
+                    <h4>{{item.name}}</h4> <span>Количество курсов: {{item.course_count()}}</span>
+                    <a href="/course_list/?id={{item.id}}">Показать курсы</a>
+                </li>
+            </ul>
+            {% endfor %}
+
+            <br><h1>*******************************</h1>
+        </div>
+        <div>
+            <a href="/student_list/"><h4>Список студентов</h4></a>
+            <a href="/create_student/"><h4>Создать студента</h4></a>
+            <a href="/add_student/"><h4>Добавить студента на курс</h4></a>
+        </div>
+    </div>
+</div>
+
+
+
