@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block style %}
+    {% include "includes/inc_style.html" %}
+{% endblock %}
+{% block title %}
+    {% include "includes/inc_title.html" %}
+{% endblock %}
+{% block menu %}
+<div id="menubar">
+    <ul id="menu">
+        <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+        <li><a href="/">Home</a></li>
+        <li><a href="/study_programs/">Study programs</a></li>
+        <li><a href="/contacts/">Contact Us</a></li>
+    </ul>
+</div>
+{% endblock %}
+{% block body %}
+<div id="site_content">
+    <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h3>Последние новости</h3>
+        <h4>Добавлены новые курсы</h4>
+        <h5>Декабрь 27, 2022</h5>
+        <p>2022 Новые материалы. Посмотрите и дайте нам знать ваше мнение.<br/><a href="#">Подробнее</a></p>
+        <p></p>
+        <h4>Запущен интерактивный веб-сайт</h4>
+        <h5>Декабрь 27, 2022</h5>
+        <p>2022 Новые курсы. Посмотрите и дайте нам знать ваше мнение.<br/><a href="#">Подробнее</a></p>
+        <h3>Полезные ссылки</h3>
+        <ul>
+            <li><a href="https://github.com/RombosK">link 1</a></li>
+            <li><a href="#">link 2</a></li>
+            <li><a href="#">link 3</a></li>
+            <li><a href="#">link 4</a></li>
+        </ul>
+        <h3>Поиск</h3>
+        <form method="post" action="#" id="search_form">
+            <p>
+                <label>
+                    <input class="search" type="text" name="search_field" value="Enter keywords....."/>
+                </label>
+                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;"
+                       src="../templates/style/search.png" alt="Search" title="Search"/>
+            </p>
+        </form>
+    </div>
+    <div id="content">
+        <div>
+            <a href="/"><h1>Go HOME</h1></a>
+        </div>
+
+        <div>
+            <a href="/create_student/"><h4>Создать студента</h4></a>
+            <a href="/add_student/"><h4>Добавить студента на курс</h4></a>
+            <a href="/delete_student/"><h4>Удалить студента</h4></a>
+	</div>
+    <h1>Список студентов</h1>
+    <div>
+
+        {% for item in objects_list %}
+<!--        <ol>-->
+        <li>
+            {{item.name}}
+            {% for course in item.courses %}
+                {{course.name}}
+            {% endfor %}
+        </li>
+<!--        </ol>-->
+        {% endfor %}
+    </div>
+    </div>
+</div>
+{% endblock %}
+        {% block footer %}
+            {% include "includes/inc_footer.html" %}
+        {% endblock %}
